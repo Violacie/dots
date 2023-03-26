@@ -86,7 +86,7 @@ export GOPATH=$HOME/Documents/Git/Personal/go
 export TERM="xterm-256color"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias goho='cd $HOME'
-
+alias vim='nvim'
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
