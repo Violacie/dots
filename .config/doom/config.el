@@ -42,6 +42,13 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
+(setq lsp-gopls-staticcheck t)
+(setq lsp-eldoc-render-all t)
+(setq lsp-gopls-complete-unimported t)
+(setq lsp-gopls-hover-kind "FullDocumentation")
+(setq lsp-gopls-use-placeholders t)
+(add-hook 'go-mode-hook #'lsp-deferred)
+
 (setq projectile-project-search-path '("~/projects/" "~/work/" ("~/git" . 1)))
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
