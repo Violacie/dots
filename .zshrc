@@ -70,7 +70,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
 
 eval $(ssh-agent)
 
@@ -78,16 +82,20 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.ssh/identities
 clear
 # User configuration
-
-export PATH="$PATH:$HOME/.local/bin/:$HOME/bin/scripts":$HOME/.cargo/bin:$HOME/Documents/Git/Personal/go/bin/:$HOME/.emacs.d/bin/:$HOME/.local/share/activemq-5.16.0/bin/linux-x86_64;
 export _JAVA_AWT_WM_NONREPARENTING=1;
 export INSTALL4J_JAVA_HOME=$JAVA_HOME;
-export GOPATH=$HOME/Documents/Git/Personal/go
+export GOPATH=$HOME/git/go
+export WALLPAPER_DIR=$HOME/Pictures/wallpapers
+export WALLPAPER=$WALLPAPER_DIR/pangolin.png
 export TERM="xterm-256color"
+export EDITOR="/usr/bin/nvim"
+export GBDKDIR=/opt/gbdk/bin/
+export PATH="$PATH:$HOME/.local/bin/:$HOME/bin/scripts":$HOME/.cargo/bin:$HOME/Documents/Git/Personal/go/bin/:$HOME/.emacs.d/bin/:$HOME/.local/share/activemq-5.16.0/bin/linux-x86_64:$GBDKDIR;
+
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias goho='cd $HOME'
 alias vim='nvim'
 alias gradlew='./gradlew'
+alias edit='emacsclient -nw'
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -114,3 +122,4 @@ alias gradlew='./gradlew'
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+source /usr/share/nvm/init-nvm.sh
