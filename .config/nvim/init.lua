@@ -1,5 +1,19 @@
 -- LUA NEOVIM CONFIGURATIONS --
 
+
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
+
 -- Plugins
 require('packer').startup(function(use)
   use {'neoclide/coc.nvim', branch = 'release'}
@@ -61,8 +75,11 @@ require('packer').startup(function(use)
       custom_dynamic_variables = {},
       yank_dry_run = true,
     })
+    end
+  }
+  if packer_bootstrap then
+	  require('packer').sync()	
   end
-}
 end)
 
 
@@ -162,8 +179,13 @@ vim.keymap.set("n", "<leader>f",
 -- Keymap
 vim.keymap.set('n', '<leader>w', '<cmd>write<cr>', {desc = 'Save'})
 vim.keymap.set('n', '<leader>t', '<cmd>NvimTreeToggle<cr>', {desc = 'toggle nvim tree'})
+
+
+--
+
 -- global clipboard
-vim.keymap.set({'n', 'x'}, 'cp', '"+y')
-vim.keymap.set({'n', 'x'}, 'cv', '"+p')
+vim.keymap.set('n', 'y', '"+y')
+vim.keymap.set('v', 'y', '"+y')
+vim.keymap.set('n', 'p', '"+p')
 -- select all
 vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
