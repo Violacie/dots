@@ -5,7 +5,7 @@
     "margin": "0 0 0 0",
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces", "keyboard-state", "custom/pacman"],
+    "modules-left": ["sway/workspaces", "sway/language", "keyboard-state", "custom/pacman"],
     "modules-center": ["clock", "custom/weather"],
     "modules-right": ["pulseaudio", "custom/mem", "backlight", "battery", "tray"],
 
@@ -14,13 +14,13 @@
     //*  Modules configuration  *
     //***************************
 
-    "wlr/workspaces": {
+    "sway/workspaces": {
         "disable-scroll": false,
         "persistent_workspaces": {
         },
     },
 
-    "wlr/language": {
+    "sway/language": {
         "format": "{} ",
 	"min-length": 5,
 	"tooltip": false
