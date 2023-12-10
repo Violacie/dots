@@ -22,8 +22,7 @@ set $term kitty
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always sh $HOME/.config/sway/scripts/monitors.sh
-#exec_always sh $HOME/.config/sway/scripts/get_wallpaper.sh
-output "*" bg $WALLPAPER fill
+exec_always sh $HOME/.config/sway/scripts/get_wallpaper.sh
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -73,11 +72,6 @@ input type:touchpad {
 #
 #
 
-exec swayidle -w \
-     timeout 300 'swaylock -f -i $HOME/.config/sway/wallpapers/lockscreen_wallpaper.jpg' \
-     timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-     before-sleep 'swaylock -f -c 000000'
-
 exec /usr/lib/geoclue-2.0/demos/agent
 exec gammastep -m wayland
 exec blueman-applet
@@ -118,7 +112,7 @@ bindsym $mod+e exec nautilus
 floating_modifier $mod normal
 
 # Reload the configuration file
-bindsym $mod+Shift+c 2
+bindsym $mod+Shift+c reload
 
 # Lock screen
 bindsym $mod+Ctrl+l exec gdmflexiserver -l
@@ -258,6 +252,7 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
+
 
 #
 # Resizing containers:
