@@ -80,17 +80,18 @@ eval $(ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.ssh/identities
+source $HOME/.config/device-local.sh
 clear
 # User configuration
 export _JAVA_AWT_WM_NONREPARENTING=1;
 export INSTALL4J_JAVA_HOME=$JAVA_HOME;
 export GOPATH=$HOME/git/go
 export WALLPAPER_DIR=$HOME/Pictures/wallpapers
-export WALLPAPER=$WALLPAPER_DIR/pangolin.png
 export TERM="xterm-256color"
 export EDITOR="/usr/bin/nvim"
-export GBDKDIR=/opt/gbdk/bin/
-export PATH="$PATH:$HOME/.local/bin/:$HOME/bin/scripts":$HOME/.cargo/bin:$HOME/Documents/Git/Personal/go/bin/:$HOME/.emacs.d/bin/:$HOME/.local/share/activemq-5.16.0/bin/linux-x86_64:$GBDKDIR;
+export GBDKDIR=/opt/gbdk/
+export CPATH="/usr/include:$GBDKDIR/include"
+export PATH="$PATH:$HOME/.local/bin/:$HOME/bin/scripts":$HOME/.cargo/bin:$HOME/Documents/Git/Personal/go/bin/:$HOME/.emacs.d/bin/:$HOME/.local/share/activemq-5.16.0/bin/linux-x86_64:$GBDKDIR/bin;
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vim='nvim'

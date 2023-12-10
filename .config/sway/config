@@ -20,6 +20,10 @@ set $right l
 # Your preferred terminal emulator
 set $term kitty
 set $gnome-schema org.gnome.desktop.interface
+
+exec_always sh $HOME/.config/sway/scripts/monitors.sh
+#exec_always sh $HOME/.config/sway/scripts/get_wallpaper.sh
+output "*" bg $WALLPAPER fill
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -28,7 +32,7 @@ set $gnome-schema org.gnome.desktop.interface
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $HOME/Pictures/wallpapers/pangolin.png fill
+# output * bg $WALLPAPER fill
 #
 # Example configuration:
 #
@@ -114,10 +118,10 @@ bindsym $mod+e exec nautilus
 floating_modifier $mod normal
 
 # Reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c 2
 
 # Lock screen
-bindsym $mod+Ctrl+l exec swaylock -f -i $HOME/.config/sway/wallpapers/lockscreen_wallpaper.jpg
+bindsym $mod+Ctrl+l exec gdmflexiserver -l
 
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+x exec nwg-bar -t bar.json
