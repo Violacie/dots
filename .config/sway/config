@@ -22,7 +22,7 @@ set $term kitty
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always sh $HOME/.config/sway/scripts/monitors.sh
-exec_always sh $HOME/.config/sway/scripts/get_wallpaper.sh
+exec ~/.azotebg
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -31,7 +31,6 @@ exec_always sh $HOME/.config/sway/scripts/get_wallpaper.sh
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg $WALLPAPER fill
 #
 # Example configuration:
 #
@@ -95,7 +94,7 @@ bindsym $mod+Return exec $term
 # Kill focused window
 bindsym $mod+q kill
 
-bindsym $mod+d exec wofi --show=drun
+bindsym $mod+d exec wofi --show=drun -I -w 3
 
 # Start your browser
 bindsym $mod+w exec firefox 
@@ -301,5 +300,6 @@ for_window [app_id="^.*"] inhibit_idle fullscreen
 bar {
     swaybar_command waybar
 }
+
 
 include /etc/sway/config.d/*

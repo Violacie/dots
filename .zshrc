@@ -93,6 +93,8 @@ export GBDKDIR=/opt/gbdk/
 export CPATH="/usr/include:$GBDKDIR/include"
 export PATH="$PATH:$HOME/.local/bin/:$HOME/bin/scripts":$HOME/.cargo/bin:$HOME/Documents/Git/Personal/go/bin/:$HOME/.emacs.d/bin/:$HOME/.local/share/activemq-5.16.0/bin/linux-x86_64:$GBDKDIR/bin;
 
+export WINEPREFIX="/home/cephir/.xlcore/wineprefix/"
+
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vim='nvim'
 alias gradlew='./gradlew'
