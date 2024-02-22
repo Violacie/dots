@@ -99,6 +99,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vim='nvim'
 alias gradlew='./gradlew'
 alias edit='emacsclient -nw'
+alias ef='nvim $(fzf)'
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
