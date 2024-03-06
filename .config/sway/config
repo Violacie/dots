@@ -97,7 +97,7 @@ bindsym $mod+Return exec $term
 # Kill focused window
 bindsym $mod+q kill
 
-bindsym $mod+d exec wofi --show=drun -I -w 3
+bindsym $mod+d exec wofi --show=drun -I -w 1 -W 25%
 
 # Start your browser
 bindsym $mod+w exec firefox 
@@ -211,19 +211,17 @@ bindsym $mod+Shift+Ctrl+0 move container to workspace number 0; workspace number
 # Layout stuff:
 #
 
-#gaps and borders
-default_border none
-font pango:monospace 0
-titlebar_padding 5
-titlebar_border_thickness 0
+#gaps and borders 
+default_border pixel 2 
 smart_borders on
-for_window [class="focused"] default_border pixel 3
+corner_radius 10
 #client.focused #4c7899 #285577 #ffffff #2e9ef4 #01fd1b
 # Set the border style for the focused window
 client.focused #eb64B9 #eb64B9 #eb64B9 #eb64B9 #eb64B9
 default_floating_border normal 2
-gaps inner 0
+gaps inner 5
 gaps outer 0
+smart_gaps off
 
 # You can "split" the current object of your focus with
 # $mod+b or $mod+v, for horizontal and vertical splits
@@ -300,6 +298,9 @@ for_window [app_id="nm-connection-editor"] floating enable, move position center
 for_window [app_id="gnome-calculator"] floating enable, move center
 for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="^.*"] inhibit_idle fullscreen
+for_window [app_id="org.gnome.Nautilus"] floating enable 
+for_window [app_id="azote"] floating enable 
+
 
 #
 # Status Bar:
