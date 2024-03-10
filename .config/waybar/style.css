@@ -120,10 +120,9 @@ window#waybar.hidden {
 }
 
 #pulseaudio {
-    margin-right: 8px;
     padding-left: 16px;
     padding-right: 16px;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 0px 0px 10px;
     background: rgb(39,33,46);
     transition: none;
     color: #ffffff;
@@ -137,10 +136,10 @@ window#waybar.hidden {
 
 #custom-mem {
     margin-right: 8px;
+    padding-right: 24px;
     padding-left: 16px;
     background: rgb(39,33,46);
-    padding-right: 16px;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 0px 10px 10px 0px;
     transition: none;
     color: #ffffff;
 }
@@ -161,11 +160,8 @@ window#waybar.hidden {
 }
 
 #backlight {
-    margin-right: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
     background: rgb(39,33,46);
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 0px 0px 0px 0px;
     transition: none;
     color: #ffffff;
 }

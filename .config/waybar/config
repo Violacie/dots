@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/language", "keyboard-state", "custom/pacman"],
     "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["pulseaudio", "custom/mem", "backlight", "battery", "tray"],
+    "modules-right": [ "pulseaudio", "backlight", "custom/mem", "battery", "tray"],
 
 
     //***************************
